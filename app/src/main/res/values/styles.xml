@@ -1,0 +1,72 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/greenLumin</item>
+        <item name="android:statusBarColor">@color/primaryDarkColor</item>
+    </style>
+
+    <style name="customActionBar" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:background">@color/primaryDarkColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="editStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">40dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginEnd">40dp</item>
+        <item name="android:background">@color/primaryTextColor</item>
+        <item name="android:ems">10</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="customEditStyle" parent="editStyle">
+        <item name="android:background">@color/backgroundEditView</item>
+        <item name="android:textColor">@color/primaryDarkColor</item>
+        <item name="android:textColorHint">@color/secondaryDarkColor</item>
+    </style>
+
+    <style name="principalButton">
+        <item name="android:background">@color/primaryDarkColor</item>
+        <item name="android:backgroundTint">@color/primaryDarkColor</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:layout_marginStart">40dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginEnd">40dp</item>
+    </style>
+
+    <style name="secondaryButton" parent="principalButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:background">@color/secondaryLightColor</item>
+        <item name="android:backgroundTint">@color/secondaryLightColor</item>
+    </style>
+
+    <style name="NoActionBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="screen_style">
+        <item name="android:background">@color/primaryColor</item>
+    </style>
+
+    <style name="loading_item">
+        <item name="android:background">#34404446</item>
+    </style>
+
+</resources>

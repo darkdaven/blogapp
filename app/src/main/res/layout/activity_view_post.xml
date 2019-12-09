@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/screen_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ViewPost">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/view_post_shimmer_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shimmer_duration="800">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/post_view_loader" />
+
+            <include layout="@layout/post_view_comment_box" />
+
+            <include layout="@layout/post_view_comment_loader" />
+
+            <include layout="@layout/post_view_comment_loader" />
+
+            <include layout="@layout/post_view_comment_loader" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/post_holder_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/view_post_createdAt_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:text="25 Nov 19, 09:40 AM"
+                                android:textColor="@color/secondaryLightColor"
+                                android:textSize="12sp" />
+
+
+                            <TextView
+                                android:id="@+id/view_post_name_text"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:text="Jose Ariel Herrera"
+                                android:textColor="@color/primaryDarkColor"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/view_post_email_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:text="ariel.herrera@itla.com"
+                                android:textColor="@color/secondaryLightColor"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:gravity="end"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/view_post_likes_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:clickable="true"
+                                    android:drawableEnd="@drawable/ic_unfavorite_24px"
+                                    android:drawableTint="@color/primaryDarkColor"
+                                    android:fontFamily="@font/roboto_light"
+                                    android:text="100"
+                                    android:textColor="@color/secondaryLightColor" />
+
+                                <TextView
+                                    android:id="@+id/view_post_comments_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:drawableEnd="@drawable/ic_message_24px"
+                                    android:drawableTint="@color/primaryDarkColor"
+                                    android:fontFamily="@font/roboto_light"
+                                    android:text="140"
+                                    android:textColor="@color/secondaryLightColor" />
+
+                                <TextView
+                                    android:id="@+id/view_post_views_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableEnd="@drawable/ic_visibility_24px"
+                                    android:drawableTint="@color/primaryDarkColor"
+                                    android:fontFamily="@font/roboto_light"
+                                    android:text="200"
+                                    android:textColor="@color/secondaryLightColor" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/view_post_profile_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:background="@color/primaryDarkColor"
+                            android:contentDescription="Profile Image"
+                            android:padding="10dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_face_24px"
+                            android:tint="@color/primaryTextColor" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/view_post_title_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Brunch this weekend?"
+                        android:textColor="@color/secondaryColor"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/view_post_body_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="This email app’s cards have been customized using Material Theming."
+                        android:textColor="@color/secondaryLightColor"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/view_post_tags_chips_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/view_post_comment_edit"
+                        android:layout_width="290sp"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:textColor="@color/primaryDarkColor"
+                        android:inputType="textMultiLine" />
+
+                    <Button
+                        android:id="@+id/view_post_save_comment_button"
+                        style="@style/secondaryButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="5dp"
+                        android:text="@string/comment" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/post_view_recycler_view"
+                    android:layout_width="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_height="wrap_content" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

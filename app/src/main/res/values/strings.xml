@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Blog App</string>
+    <string name="register">SING UP</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="login">Login</string>
+    <string name="name">name</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_account_login">Have an Account? Login</string>
+    <string name="title_activity_home">Home</string>
+    <string name="create_post">Create Post</string>
+    <string name="post_title">Post Title</string>
+    <string name="post_body">Post Body</string>
+    <string name="save_post">Save Post</string>
+    <string name="cancel">Cancel</string>
+    <string name="type_tags">Type Tags</string>
+    <string name="save_comment">Save Comment</string>
+    <string name="comment">Comment</string>
+</resources>

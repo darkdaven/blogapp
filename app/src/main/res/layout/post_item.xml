@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/post_item_holder_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/post_item_createdAt_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="25 Nov 19, 09:40 AM"
+                        android:textColor="@color/secondaryLightColor"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:id="@+id/post_item_name_text"
+                        android:layout_width="200sp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="Jose Ariel Herrera"
+                        android:textColor="@color/primaryDarkColor"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/post_item_email_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="ariel.herrera@itla.com"
+                        android:textColor="@color/secondaryLightColor"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/post_item_profile_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:background="@color/primaryDarkColor"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_face_24px"
+                    android:tint="@color/primaryTextColor" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/post_item_title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Brunch this weekend?"
+                android:textColor="@color/secondaryColor"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/post_item_body_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:text="This email app’s cards have been customized using Material Theming."
+                android:textColor="@color/secondaryLightColor"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/post_item_tags_chips_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/primaryDarkColor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/post_item_likes_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_unfavorite_24px"
+                    android:drawableTint="@color/primaryDarkColor"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="100"
+                    android:textColor="@color/secondaryLightColor" />
+
+                <TextView
+                    android:id="@+id/post_item_comments_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:drawableEnd="@drawable/ic_message_24px"
+                    android:drawableTint="@color/primaryDarkColor"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="140"
+                    android:textColor="@color/secondaryLightColor" />
+
+                <TextView
+                    android:id="@+id/post_item_views_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_visibility_24px"
+                    android:drawableTint="@color/primaryDarkColor"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="200"
+                    android:textColor="@color/secondaryLightColor" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

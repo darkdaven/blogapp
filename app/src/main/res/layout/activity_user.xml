@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/screen_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.User">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/user_shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <View
+                    style="@style/loading_item"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:padding="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        style="@style/loading_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <View
+                        style="@style/loading_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <View
+                        style="@style/loading_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <View
+                        style="@style/loading_item"
+                        android:layout_width="80dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="end|bottom" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <include layout="@layout/post_item_loader" />
+
+            <include layout="@layout/post_item_loader" />
+
+            <include layout="@layout/post_item_loader" />
+        </LinearLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#fff">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/user_profile_image"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:adjustViewBounds="true"
+                        android:background="@color/primaryDarkColor"
+                        android:contentDescription="Profile Image"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_face_24px"
+                        android:tint="@color/primaryTextColor" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/user_name_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Jose Ariel Herrera"
+                            android:textColor="@color/primaryDarkColor"
+                            android:textSize="32sp" />
+
+                        <TextView
+                            android:id="@+id/user_email_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="ariel.herrera@itla.com"
+                            android:textColor="@color/primaryDarkColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/user_created_at_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:gravity=""
+                            android:text="24 May 19, 12:55:20 AM"
+                            android:textColor="@color/primaryDarkColor"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/user_posts_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|bottom"
+                            android:drawableEnd="@drawable/ic_post_24px"
+                            android:drawableTint="@color/primaryDarkColor"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="140"
+                            android:textColor="@color/primaryDarkColor"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/user_post_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="false">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
