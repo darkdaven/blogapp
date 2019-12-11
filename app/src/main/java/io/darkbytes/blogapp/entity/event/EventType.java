@@ -22,7 +22,10 @@ public enum EventType {
     LOGGED("logged"),
 
     @SerializedName("new-post")
-    NEW_POST("new-post");
+    NEW_POST("new-post"),
+
+    @SerializedName("error")
+    ERROR("error");
 
     private final String type;
 

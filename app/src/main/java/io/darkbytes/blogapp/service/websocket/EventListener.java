@@ -12,6 +12,10 @@ import io.darkbytes.blogapp.entity.event.ViewPostEvent;
 public abstract class EventListener implements Listener {
 
     public void consume(Event event, String body) {
+
+        if(event == null)
+            return;
+
         switch (event.getType()) {
             case VIEW_POST:
                 this.onViewPostEvent((ViewPostEvent) EventFactory.convert(event.getType(), body));

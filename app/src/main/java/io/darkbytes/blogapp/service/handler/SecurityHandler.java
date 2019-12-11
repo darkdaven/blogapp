@@ -15,10 +15,12 @@ import io.darkbytes.blogapp.entity.request.LoginRequest;
 import io.darkbytes.blogapp.entity.request.RegisterRequest;
 import io.darkbytes.blogapp.entity.response.ErrorResponse;
 import io.darkbytes.blogapp.entity.response.LoginResponse;
+import io.darkbytes.blogapp.entity.response.LogoutResponse;
 import io.darkbytes.blogapp.entity.response.RegisterResponse;
 import io.darkbytes.blogapp.service.BlogApiService;
 import io.darkbytes.blogapp.service.SecurityService;
 import io.darkbytes.blogapp.util.JsonToObjectConverter;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -88,6 +90,37 @@ public class SecurityHandler {
 
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
+
+                Snackbar.make(view, "Something happen try again", Snackbar.LENGTH_LONG).show();
+                handler.failure(new ErrorResponse(true, t.getMessage()));
+            }
+        });
+    }
+
+    public void logout(View view, String bearer, Handler handler) {
+
+        Call<LogoutResponse> response = securityService.logout(bearer);
+        response.enqueue(new Callback<LogoutResponse>() {
+            @Override
+            public void onResponse(Call<LogoutResponse> call, Response<LogoutResponse> response) {
+                if (response.code() == HttpURLConnection.HTTP_OK) {
+
+                    Snackbar.make(view, "User logout successfully!", Snackbar.LENGTH_LONG).show();
+                    handler.success(response.body());
+                } else {
+                    try {
+                        ErrorResponse errorResponse = new JsonToObjectConverter<ErrorResponse>()
+                                .convertToObject(response.errorBody().string(), ErrorResponse.class);
+
+                        Snackbar.make(view, errorResponse.getMessage(), Snackbar.LENGTH_LONG).show();
+                    } catch (IOException e) {
+                    }
+                    handler.failure(ErrorResponse.fromErrorBody(response.errorBody()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LogoutResponse> call, Throwable t) {
 
                 Snackbar.make(view, "Something happen try again", Snackbar.LENGTH_LONG).show();
                 handler.failure(new ErrorResponse(true, t.getMessage()));

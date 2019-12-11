@@ -20,10 +20,12 @@ import io.darkbytes.blogapp.CredentialConstant;
 import io.darkbytes.blogapp.R;
 import io.darkbytes.blogapp.adapter.PostAdapter;
 import io.darkbytes.blogapp.entity.response.ErrorResponse;
+import io.darkbytes.blogapp.entity.response.LogoutResponse;
 import io.darkbytes.blogapp.entity.response.PostResponse;
 import io.darkbytes.blogapp.entity.response.UserResponse;
 import io.darkbytes.blogapp.service.handler.Handler;
 import io.darkbytes.blogapp.service.handler.PostHandler;
+import io.darkbytes.blogapp.service.handler.SecurityHandler;
 import io.darkbytes.blogapp.service.handler.UserHandler;
 import io.darkbytes.blogapp.service.websocket.HomeEventListener;
 import io.darkbytes.blogapp.service.websocket.WebSocketService;
@@ -34,6 +36,7 @@ public class User extends AppCompatActivity {
 
     private PostHandler postHandler = new PostHandler();
     private UserHandler userHandler = new UserHandler();
+    private SecurityHandler securityHandler = new SecurityHandler();
     private String bearer;
     private String token;
     private ShimmerFrameLayout shimmerFrameLayout;
@@ -62,11 +65,21 @@ public class User extends AppCompatActivity {
         logout = findViewById(R.id.user_logout_button);
 
         logout.setOnClickListener(v -> {
-            PreferenceUtil.clear(getApplicationContext());
-            Intent intent = new Intent(getApplicationContext(), Base.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish();
+            securityHandler.logout(recyclerView, bearer, new Handler<LogoutResponse>() {
+                @Override
+                public void success(LogoutResponse response) {
+                    PreferenceUtil.clear(getApplicationContext());
+                    Intent intent = new Intent(getApplicationContext(), Base.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+
+                @Override
+                public void failure(ErrorResponse errorBody) {
+
+                }
+            });
         });
 
         shimmerFrameLayout = findViewById(R.id.user_shimmer);
