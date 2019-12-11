@@ -1,4 +1,4 @@
-package io.darkbytes.blogapp.utit;
+package io.darkbytes.blogapp.util;
 
 import android.content.Context;
 import android.view.LayoutInflater;

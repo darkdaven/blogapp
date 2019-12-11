@@ -37,9 +37,9 @@ import io.darkbytes.blogapp.service.handler.Handler;
 import io.darkbytes.blogapp.service.handler.PostHandler;
 import io.darkbytes.blogapp.service.websocket.EventListener;
 import io.darkbytes.blogapp.service.websocket.WebSocketService;
-import io.darkbytes.blogapp.utit.ChipUtil;
-import io.darkbytes.blogapp.utit.DateUtil;
-import io.darkbytes.blogapp.utit.PreferenceUtil;
+import io.darkbytes.blogapp.util.ChipUtil;
+import io.darkbytes.blogapp.util.DateUtil;
+import io.darkbytes.blogapp.util.PreferenceUtil;
 
 public class ViewPost extends AppCompatActivity {
 
@@ -217,8 +217,8 @@ public class ViewPost extends AppCompatActivity {
                 @Override
                 public void success(PostCommentResponse response) {
                     Snackbar.make(v, "Comment saved successfully", Snackbar.LENGTH_LONG);
-                    postComments.add(response);
-                    postCommentAdapter.notifyItemChanged(postComments.size() - 1);
+                    //postComments.add(response);
+                    //postCommentAdapter.notifyItemChanged(postComments.size() - 1);
                     clearComment();
                 }
 

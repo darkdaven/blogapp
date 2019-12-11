@@ -1,6 +1,6 @@
 package io.darkbytes.blogapp.entity.event;
 
-import io.darkbytes.blogapp.utit.JsonToObjectConverter;
+import io.darkbytes.blogapp.util.JsonToObjectConverter;
 
 public class EventFactory {
 

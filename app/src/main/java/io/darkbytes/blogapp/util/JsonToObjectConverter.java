@@ -1,4 +1,4 @@
-package io.darkbytes.blogapp.utit;
+package io.darkbytes.blogapp.util;
 
 import com.google.gson.Gson;
 

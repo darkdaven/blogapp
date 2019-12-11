@@ -17,7 +17,7 @@ import io.darkbytes.blogapp.Constant;
 import io.darkbytes.blogapp.R;
 import io.darkbytes.blogapp.activity.User;
 import io.darkbytes.blogapp.entity.response.PostCommentResponse;
-import io.darkbytes.blogapp.utit.DateUtil;
+import io.darkbytes.blogapp.util.DateUtil;
 
 public class PostCommentAdapter extends RecyclerView.Adapter<PostCommentAdapter.ViewHolder> {
 

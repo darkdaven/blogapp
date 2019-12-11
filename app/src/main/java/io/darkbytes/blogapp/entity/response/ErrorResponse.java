@@ -2,7 +2,7 @@ package io.darkbytes.blogapp.entity.response;
 
 import java.io.IOException;
 
-import io.darkbytes.blogapp.utit.JsonToObjectConverter;
+import io.darkbytes.blogapp.util.JsonToObjectConverter;
 import okhttp3.ResponseBody;
 
 public class ErrorResponse {

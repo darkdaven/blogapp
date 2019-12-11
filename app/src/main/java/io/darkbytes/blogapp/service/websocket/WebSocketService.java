@@ -10,7 +10,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 
 import io.darkbytes.blogapp.Constant;
 import io.darkbytes.blogapp.entity.event.Event;
-import io.darkbytes.blogapp.utit.JsonToObjectConverter;
+import io.darkbytes.blogapp.util.JsonToObjectConverter;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;

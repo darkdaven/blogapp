@@ -25,10 +25,10 @@ import io.darkbytes.blogapp.entity.response.ErrorResponse;
 import io.darkbytes.blogapp.entity.response.PostResponse;
 import io.darkbytes.blogapp.service.handler.Handler;
 import io.darkbytes.blogapp.service.handler.PostHandler;
-import io.darkbytes.blogapp.utit.ChipUtil;
-import io.darkbytes.blogapp.utit.DateUtil;
-import io.darkbytes.blogapp.utit.PreferenceUtil;
-import io.darkbytes.blogapp.utit.StringUtil;
+import io.darkbytes.blogapp.util.ChipUtil;
+import io.darkbytes.blogapp.util.DateUtil;
+import io.darkbytes.blogapp.util.PreferenceUtil;
+import io.darkbytes.blogapp.util.StringUtil;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 

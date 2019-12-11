@@ -18,7 +18,7 @@ import io.darkbytes.blogapp.entity.response.LoginResponse;
 import io.darkbytes.blogapp.entity.response.RegisterResponse;
 import io.darkbytes.blogapp.service.BlogApiService;
 import io.darkbytes.blogapp.service.SecurityService;
-import io.darkbytes.blogapp.utit.JsonToObjectConverter;
+import io.darkbytes.blogapp.util.JsonToObjectConverter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

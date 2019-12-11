@@ -7,7 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import io.darkbytes.blogapp.CredentialConstant;
-import io.darkbytes.blogapp.utit.PreferenceUtil;
+import io.darkbytes.blogapp.util.PreferenceUtil;
 
 public class Base extends AppCompatActivity {
     @Override

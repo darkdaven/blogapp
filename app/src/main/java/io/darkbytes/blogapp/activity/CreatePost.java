@@ -22,7 +22,7 @@ import io.darkbytes.blogapp.entity.response.ErrorResponse;
 import io.darkbytes.blogapp.entity.response.PostResponse;
 import io.darkbytes.blogapp.service.handler.Handler;
 import io.darkbytes.blogapp.service.handler.PostHandler;
-import io.darkbytes.blogapp.utit.PreferenceUtil;
+import io.darkbytes.blogapp.util.PreferenceUtil;
 
 public class CreatePost extends AppCompatActivity {
     private PostHandler postHandler = new PostHandler();

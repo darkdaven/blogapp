@@ -27,7 +27,7 @@
         <activity android:name=".activity.Login" />
         <activity android:name=".activity.CreatePost" />
         <activity android:name=".activity.ViewPost" />
-        <activity android:name=".activity.User"></activity>
+        <activity android:name=".activity.User" />
 
         <meta-data
             android:name="preloaded_fonts"
